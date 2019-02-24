@@ -6,7 +6,11 @@
 
     <groupId>com.flume_kafka_sparkstreaming</groupId>
     <artifactId>Flume_Kafka_Sparkstreaming</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>kafka_producer</module>
+    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
