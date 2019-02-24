@@ -12,6 +12,7 @@
         <module>kafka_producer</module>
         <module>hive_analysis</module>
         <module>spark_streaming</module>
+        <module>common</module>
     </modules>
 
     <properties>
