@@ -6,7 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="hive_analysis" />
         <module name="kafka_producer" />
+        <module name="spark_streaming" />
       </profile>
     </annotationProcessing>
   </component>

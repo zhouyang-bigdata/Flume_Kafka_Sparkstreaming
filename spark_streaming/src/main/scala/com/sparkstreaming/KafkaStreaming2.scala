@@ -1,6 +1,10 @@
 package com.sparkstreaming
 
-import com.sparkstreaming.KafkaStreaming2.jsonDecode
+import java.io.IOException
+
+import com.bean.RecordBean
+import com.utils.JsonUtils
+import org.apache.hadoop.mapreduce.OutputFormat
 import org.apache.kafka.clients.consumer.ConsumerRecord
 import org.apache.kafka.common.serialization.StringDeserializer
 import org.apache.log4j.{Level, Logger}
@@ -10,15 +14,15 @@ import org.apache.spark.streaming.kafka010.ConsumerStrategies.Subscribe
 import org.apache.spark.streaming.kafka010.KafkaUtils
 import org.apache.spark.streaming.kafka010.LocationStrategies.PreferBrokers
 import org.apache.spark.streaming.{Seconds, StreamingContext, Time}
-/*
- * @Author zhouyang
- * @Description TODO 启动sparkstreaming
- * @Date 16:53 2019/2/22
- * @Param 
- * @return 
- **/
-object KafkaStreaming {
 
+/**
+  * @ClassName LauncherStreaming2
+  * @Description TODO 启动sparkstreaming ，并做ETL（装载，转换，存储）
+  * @Author zhouyang
+  * @Date 2019/2/24 12:22
+  * @Version 1.0
+  **/
+object KafkaStreaming2 {
   //
   private lazy val logger = Logger.getLogger(getClass)
   //数据在hdfs上的路径
@@ -31,7 +35,7 @@ object KafkaStreaming {
     //对象序列化配置
     System.setProperty("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
     //sparkconf
-    val sparkConf = new SparkConf().setAppName("LauncherStreaming2")
+    val sparkConf = new SparkConf().setAppName("KafkaStreaming2")
     //每60秒一个批次
     val ssc = new StreamingContext(sparkConf, Seconds(60))
     //Kafka集群使用的zookeeper
@@ -57,7 +61,12 @@ object KafkaStreaming {
     type Record = ConsumerRecord[String, String]
     //rdd 计算
     stream.foreachRDD((rdd : RDD[Record], time : Time) => {
-      rdd.map(row => (row.timestamp(), jsonDecode(row.value())))
+      //将消息中数据生成新的键值对
+      val pairs = rdd
+        .map(row => (row.timestamp(), jsonDecode(row.value())))
+        .map(row => (row._2.getType.name(), (1, row._2.getValue, row._1)))
+      // 存入hdfs
+      pairs.saveAsNewAPIHadoopFile(HDFS_DIR, classOf[String], classOf[String], classOf[OutputFormat[String, String]])
     })
 
     //启动sparkstreaming context，提交任务
@@ -66,7 +75,33 @@ object KafkaStreaming {
     ssc.awaitTermination()
   }
 
+  /**
+    * Json decode UDF function
+    *
+    * @param text the encoded JSON string
+    * @return Returns record bean
+    */
+  def jsonDecode(text: String): RecordBean = {
+    try {
+      JsonUtils.deserialize(text, classOf[RecordBean])
+    } catch {
+      case e: IOException =>
+        logger.error(e.getMessage, e)
+        null
+    }
+  }
+
+  /*
+   * @Author zhouyang
+   * @Description TODO 分析日志
+   * @Date 13:54 2019/2/24
+   * @Param [log]
+   * @return
+   **/
+  def parseLog(row: ConsumerRecord[String, String]): (String, String) = {
+    var key = ""
+    var newData = null
+
+    (key, newData)
+  }
 }
-
-
-
