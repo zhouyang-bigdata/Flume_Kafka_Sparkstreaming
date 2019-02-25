@@ -14,7 +14,7 @@
 
 **（1）流程图**
 
-![](D:\BIG-DATA\Flume_Kafka_Sparkstreaming\doc\架构.png)
+![](Flume_Kafka_Sparkstreaming\doc\架构.png)
 
 **（2）处理流程**
 
