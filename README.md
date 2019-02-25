@@ -1,6 +1,6 @@
 架构
 
-![](D:\BIG-DATA\Flume_Kafka_Sparkstreaming\doc\架构.png)
+![](doc\架构.png)
 
 
 
