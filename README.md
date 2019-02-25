@@ -14,7 +14,7 @@
 
 **（1）流程图**
 
-![img](file:///C:\Users\27930\AppData\Local\Temp\ksohtml\wps3A2F.tmp.jpg) 
+![](D:\BIG-DATA\Flume_Kafka_Sparkstreaming\doc\架构.png)
 
  
 
