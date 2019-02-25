@@ -14,7 +14,7 @@
 
 **（1）流程图**
 
-![](Flume_Kafka_Sparkstreaming\doc\架构.png)
+![](doc/架构.png)
 
 **（2）处理流程**
 
@@ -106,7 +106,7 @@ $ java -Dconfig=./config/common.conf -jar hive_analysis/target/hive_analysis-1.0
 
 3. 项目结构
 
-![](D:\BIG-DATA\Flume_Kafka_Sparkstreaming\doc\项目目录结构.png)
+![](doc/项目目录结构.png)
 
 **五 测试**
 
