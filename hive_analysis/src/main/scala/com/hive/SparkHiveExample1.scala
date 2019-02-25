@@ -19,7 +19,7 @@ object SparkHiveExample1 {
 
     val hiveContext = new HiveContext(sc)
 
-
+    //hsql
     hiveContext.sql("CREATE TABLE IF NOT EXISTS hive_test_table1 (key INT, value STRING)")
     hiveContext.sql("LOAD DATA LOCAL INPATH 'hive_analysis/src/main/resources/kv1.txt' INTO TABLE hive_test_table1")
 
