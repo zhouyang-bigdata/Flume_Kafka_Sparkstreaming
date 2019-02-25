@@ -15,10 +15,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.test.db;
+package com.db;
 
-import com.test.config.ConfigurationFactory;
-import com.test.config.objects.Config;
+import com.config.ConfigurationFactory;
+import com.config.objects.Config;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.apache.log4j.Logger;

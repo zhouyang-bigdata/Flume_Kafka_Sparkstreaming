@@ -15,11 +15,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.test.config;
+package com.config;
 
 import com.google.common.base.Strings;
 
-import com.test.config.objects.Config;
+import com.config.objects.Config;
 import com.typesafe.config.ConfigBeanFactory;
 import com.typesafe.config.ConfigFactory;
 

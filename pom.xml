@@ -25,6 +25,7 @@
         <scala.detail.version>2.10.7</scala.detail.version>
         <hive.version>1.1</hive.version>
         <hbase.version>1.2.6</hbase.version>
+        <log4j.version>1.2.17</log4j.version>
     </properties>
 
     <repositories>
@@ -158,6 +159,12 @@
             <groupId>com.typesafe.slick</groupId>
             <artifactId>slick_2.11</artifactId>
             <version>3.2.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j.version}</version>
         </dependency>
 
 

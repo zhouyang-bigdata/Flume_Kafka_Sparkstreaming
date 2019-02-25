@@ -17,11 +17,11 @@
  */
 package com.test;
 
-import com.test.beans.RecordBean;
-import com.test.config.ConfigurationFactory;
-import com.test.config.objects.Config;
+import com.beans.RecordBean;
+import com.config.ConfigurationFactory;
+import com.config.objects.Config;
 import com.test.producer.Producer;
-import com.test.utils.JsonUtils;
+import com.utils.JsonUtils;
 
 import org.apache.log4j.Logger;
 
@@ -80,4 +80,18 @@ public class Run {
 
         return data;
     }
+
+    /*
+     * @Author zhouyang
+     * @Description TODO 关闭producer
+     * @Date 17:17 2019/2/25
+     * @Param [producer]
+     * @return
+     **/
+    static private void closeProducer(final Producer producer){
+        LOGGER.info("Generator application stopping ...");
+
+        producer.close();
+    }
+
 }

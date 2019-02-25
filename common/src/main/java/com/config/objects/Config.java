@@ -15,14 +15,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.test.config.objects;
+package com.config.objects;
 
 public class Config {
     private ProducerConfig producer;
 
     private GeneratorConfig generator;
-
-    private WebConfig web;
 
     private StreamingConfig streaming;
 
@@ -40,14 +38,6 @@ public class Config {
 
     public void setGenerator(GeneratorConfig generator) {
         this.generator = generator;
-    }
-
-    public WebConfig getWeb() {
-        return web;
-    }
-
-    public void setWeb(WebConfig web) {
-        this.web = web;
     }
 
     public StreamingConfig getStreaming() {

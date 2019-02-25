@@ -17,8 +17,8 @@
  */
 package com.test.producer;
 
-import com.test.config.ConfigurationFactory;
-import com.test.config.objects.Config;
+import com.config.ConfigurationFactory;
+import com.config.objects.Config;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;

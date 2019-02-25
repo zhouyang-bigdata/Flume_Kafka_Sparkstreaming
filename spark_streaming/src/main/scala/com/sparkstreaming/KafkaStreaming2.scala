@@ -2,7 +2,7 @@ package com.sparkstreaming
 
 import java.io.IOException
 
-import com.bean.RecordBean
+import com.beans.RecordBean
 import com.utils.JsonUtils
 import org.apache.hadoop.mapreduce.OutputFormat
 import org.apache.kafka.clients.consumer.ConsumerRecord
@@ -91,17 +91,4 @@ object KafkaStreaming2 {
     }
   }
 
-  /*
-   * @Author zhouyang
-   * @Description TODO 分析日志
-   * @Date 13:54 2019/2/24
-   * @Param [log]
-   * @return
-   **/
-  def parseLog(row: ConsumerRecord[String, String]): (String, String) = {
-    var key = ""
-    var newData = null
-
-    (key, newData)
-  }
 }

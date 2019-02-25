@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.test.config.objects;
+package com.config.objects;
 
 public class StreamingDbConfig {
     private String host;
