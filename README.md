@@ -16,8 +16,6 @@
 
 ![](D:\BIG-DATA\Flume_Kafka_Sparkstreaming\doc\架构.png)
 
- 
-
 **（2）处理流程**
 
 Flume会实时监控写入日志的磁盘，只要有新的日志写入，Flume就会将日志以消息的形式传递给Kafka，然后Spark Streaming实时消费消息传入Hive
@@ -103,6 +101,12 @@ $ java -Dconfig=./config/common.conf -jar kafka_producer/target/kafka_producer-1
 ```
 $ java -Dconfig=./config/common.conf -jar hive_analysis/target/hive_analysis-1.0-SNAPSHOT.jar
 ```
+
+
+
+3. 项目结构
+
+![](D:\BIG-DATA\Flume_Kafka_Sparkstreaming\doc\项目目录结构.png)
 
 **五 测试**
 
