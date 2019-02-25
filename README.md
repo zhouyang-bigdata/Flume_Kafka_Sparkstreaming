@@ -46,11 +46,15 @@ Flume会实时监控写入日志的磁盘，只要有新的日志写入，Flume�
 
 软件环境
 
-CentOs 7.0
+1. CentOs 7.0
 
-Jdk1.7/jdk1.8
-
-...
+2. Java >= 1.7 (Oracle JDK has been tested)
+3. Maven >= 3
+4. Apache Spark == 1.6
+5. scala >=2.10
+6. Kafka >= 0.10.1.0
+7. hive >=1.1
+8. hadoop >=2.6
 
  
 
@@ -74,9 +78,31 @@ Jdk1.7/jdk1.8
 
  
 
-**四 开发**
+**四 运行**
 
- 
+1. 启动kafka，spark，hadoop，hive
+2. 编译打包
+
+```
+mvn clean package -DskipTests
+```
+
+​	启动：
+
+```bash
+$ cd kafka-spark-streaming-example
+$ java -Dconfig=./config/common.conf -jar spark_streaming/target/spark_streaming-1.0-SNAPSHOT.jar
+```
+
+
+
+```bash
+$ java -Dconfig=./config/common.conf -jar kafka_producer/target/kafka_producer-1.0-SNAPSHOT.jar
+```
+
+```
+$ java -Dconfig=./config/common.conf -jar hive_analysis/target/hive_analysis-1.0-SNAPSHOT.jar
+```
 
 **五 测试**
 

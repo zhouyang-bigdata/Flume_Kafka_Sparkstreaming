@@ -17,7 +17,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jdk.version>1.7</jdk.version>
+        <jdk.version>1.8</jdk.version>
         <spark.version>1.6.0</spark.version>
         <spark.streaming.kafka.version>2.1.0</spark.streaming.kafka.version>
         <scala.version>2.10</scala.version>
