@@ -1,16 +1,5 @@
 package com.hive
 
-package org.apache.spark.examples.sql.hive
-
-// $example on:spark_hive$
-import java.io.File
-
-import org.apache.spark.sql.SQLContext
-import org.apache.spark.{SparkConf, SparkContext}
-
-
-// $example off:spark_hive$
-
 /**
   * @ClassName SparkHiveExample
   * @Description TODO
