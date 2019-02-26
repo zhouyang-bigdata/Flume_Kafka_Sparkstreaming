@@ -15,12 +15,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.test;
+package com.producer_test;
 
 import com.beans.RecordBean;
 import com.config.ConfigurationFactory;
 import com.config.objects.Config;
-import com.test.producer.Producer;
+import com.producer_test.producer.Producer;
 import com.utils.JsonUtils;
 
 import org.apache.log4j.Logger;
