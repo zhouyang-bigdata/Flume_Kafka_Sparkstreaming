@@ -22,7 +22,7 @@
               <finalName>${project.artifactId}-${project.version}</finalName>
               <transformers>
                 <transformer>
-                  <mainClass>com.test.Run</mainClass>
+                  <mainClass>com.producer_test.Run</mainClass>
                 </transformer>
               </transformers>
             </configuration>

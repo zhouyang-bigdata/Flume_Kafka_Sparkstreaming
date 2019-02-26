@@ -11,10 +11,6 @@
 
     <artifactId>kafka_producer</artifactId>
 
-    <properties>
-        <kafka.version>0.10.1.0</kafka.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>com.flume_kafka_sparkstreaming</groupId>
@@ -45,7 +41,7 @@
                             <transformers>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.test.Run</mainClass>
+                                    <mainClass>com.producer_test.Run</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>

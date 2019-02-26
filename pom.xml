@@ -26,6 +26,7 @@
         <hive.version>1.1</hive.version>
         <hbase.version>1.2.6</hbase.version>
         <log4j.version>1.2.17</log4j.version>
+        <kafka.version>0.10.1.0</kafka.version>
     </properties>
 
     <repositories>
