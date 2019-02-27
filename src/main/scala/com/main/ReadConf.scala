@@ -15,7 +15,7 @@ object ReadConf {
   //读配置文件
   @transient
   val logger : Logger = Logger.getLogger(this.getClass)
-  val sparkContext = Common.getSparkContext()
+  //val sparkContext = Common.getSparkContext()
 
   def main(args: Array[String]): Unit = {
     println("startTime="+TimeUtils.getNowDate())

@@ -1,8 +1,8 @@
 package com.conf
 
 import com.typesafe.config.{Config, ConfigFactory}
-import org.apache.commons.lang3.StringUtils
-import org.apache.spark.{SparkConf, SparkContext}
+//import org.apache.commons.lang3.StringUtils
+//import org.apache.spark.{SparkConf, SparkContext}
 
 import scala.collection.JavaConverters._
 
@@ -29,25 +29,26 @@ object Common {
     val driverMemory : String = config.getString("kxnf.spark.driver.memory")
     val appName : String = config.getString("kxnf.spark.appName")
     val sparkMaster:String = config.getString("kxnf.spark.master")
-    var sparkContext:SparkContext = null
 
-  def getSparkContext(unit: Unit):SparkContext = {
-    val conf:SparkConf  = new SparkConf()
-    if(testModel){
-      conf.set("spark.driver.host",driverHost)
-    }
-
-    conf.set("spark.executor.memory", executorMemory)
-    conf.set("spark.driver.memory", driverMemory)
-    conf.setMaster(sparkMaster)
-    conf.setAppName(this.appName)
-    conf.set("spark.serializer",serializer)
-    //如果使用KryoSerializer方式则 需要添加自定义的序列化类
-    //conf.registerKryoClasses(Array())
-    sparkContext = new SparkContext(conf)
-    //引入dataFrame 使用外部数据源接口来自定义CSV输入格式
-    sparkContext
-  }
+//  var sparkContext:SparkContext = null
+//
+//  def getSparkContext(unit: Unit):SparkContext = {
+//    val conf:SparkConf  = new SparkConf()
+//    if(testModel){
+//      conf.set("spark.driver.host",driverHost)
+//    }
+//
+//    conf.set("spark.executor.memory", executorMemory)
+//    conf.set("spark.driver.memory", driverMemory)
+//    conf.setMaster(sparkMaster)
+//    conf.setAppName(this.appName)
+//    conf.set("spark.serializer",serializer)
+//    //如果使用KryoSerializer方式则 需要添加自定义的序列化类
+//    //conf.registerKryoClasses(Array())
+//    sparkContext = new SparkContext(conf)
+//    //引入dataFrame 使用外部数据源接口来自定义CSV输入格式
+//    sparkContext
+//  }
 
 
     def getConfMap(path: String): java.util.HashMap[String, String] = {
